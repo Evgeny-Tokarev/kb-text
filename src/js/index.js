@@ -11,6 +11,13 @@ let screen = document.querySelector("body");
 let burger = document.querySelector(".burger__menu");
 let button = document.querySelector("#burger__button");
 
+
+
+
+
+
+
+
 for (let i = 0; i < slides.length; i++) {
   slider[i] = getComputedStyle(slides[i]).backgroundImage;
 }
