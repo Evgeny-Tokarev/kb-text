@@ -1,0 +1,22 @@
+@use "common" as *;
+
+.thick {
+  font-weight: 600;
+}
+
+.portfolio-prototips {
+  h2 {
+    text-align: center;
+    color: red;
+  }
+}
+
+.portfolio-prototips__nav {
+  .main-menu {
+  }
+}
+
+.portfolio-prototips__item {
+  cursor: pointer;
+  padding: 2rem;
+}

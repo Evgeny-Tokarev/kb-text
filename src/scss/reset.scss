@@ -1,0 +1,30 @@
+html {
+  font-size: 22px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-style: normal;
+  font-weight: normal;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  color: #fff;
+}
+
+ol,
+ul {
+  list-style: none;
+}
