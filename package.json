@@ -7,17 +7,14 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "clean": "rimraf dist",
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html",
-    "serve": "serve dist -l 80",
     "format": "prettier --write ."
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
     "prettier": "^2.0.5",
-    "rimraf": "^3.0.2",
-    "sass": "^1.26.10",
-    "serve": "^11.3.2"
-  }
+    "sass": "^1.26.10"
+  },
+  "dependencies": {}
 }

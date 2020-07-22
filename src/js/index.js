@@ -11,13 +11,6 @@ let screen = document.querySelector("body");
 let burger = document.querySelector(".burger__menu");
 let button = document.querySelector("#burger__button");
 
-
-
-
-
-
-
-
 for (let i = 0; i < slides.length; i++) {
   slider[i] = getComputedStyle(slides[i]).backgroundImage;
 }
@@ -238,11 +231,11 @@ for (let i = 0; i < portfMenuItems.length; i++) {
 }
 
 // function addAll() {
-// 	portfMenuItems[0].classList.remove("black-text");
-// 	portfMenuItems[0].classList.add("red-text");
-// 	for (let i = 0; i < portfItems.length; i++) {
-// 		portfItems[i].classList.add("portfolio__item-shown");
-// 	}
+//  portfMenuItems[0].classList.remove("black-text");
+//  portfMenuItems[0].classList.add("red-text");
+//  for (let i = 0; i < portfItems.length; i++) {
+//    portfItems[i].classList.add("portfolio__item-shown");
+//  }
 // }
 
 function removeAll() {
