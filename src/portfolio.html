@@ -26,9 +26,11 @@
     />
     <link rel="stylesheet" href="scss/style.scss" />
     <link rel="stylesheet" href="scss/portfolio-style.scss" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
 
     <!-- <link rel="stylesheet" href="css/media.css" /> -->
   </head>
@@ -59,38 +61,46 @@
             <span class="thick">Задача:</span> сделать прототип лендинга для
             портфолио копирайтера. Перед вами прототип этого сайта
           </h4>
-          
-     <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img
-            class="screenshot"
-            src="images/psycho1.jpg"
-            alt="screenshot landind-page prototipe"
-          /></div>
-      <div class="swiper-slide"><img
-            class="screenshot"
-            src="images/psycho2.jpg"
-            alt="screenshot landind-page prototipe"
-          /></div>
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
-  </div>
+
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  class="screenshot"
+                  src="images/psycho1.jpg"
+                  alt="screenshot landind-page prototipe"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="screenshot"
+                  src="images/psycho2.jpg"
+                  alt="screenshot landind-page prototipe"
+                />
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
       </article>
     </section>
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-      <script>
-    var swiper = new Swiper('.swiper-container', {
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper('.swiper-container', {
+      autoHeight: true, //enable auto height
+      spaceBetween: 20,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
-      pagination: {
-        el: '.swiper-pagination',
-      },
     });
-  </script>
+    </script>
   </body>
 </html>
