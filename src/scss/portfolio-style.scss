@@ -23,6 +23,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		margin-bottom: 2rem;
 	}
 }
 
@@ -51,6 +52,9 @@
 	-o-transition: 0.4s linear;
 	transition: 0.4s linear;
 }
+.articles h4 {
+	padding: 1rem 0 3rem 0;
+}
 .screenshot {
 	display: block;
 	width: 100%;
@@ -76,4 +80,10 @@
       height: 500px;
       line-height: 500px;
     }
-  
+    .swiper-container-horizontal {
+    	padding-top: 2rem!important;
+    }
+   .swiper-container-horizontal>.swiper-pagination-bullets {
+    	top: -0.5rem;
+    }
+ 

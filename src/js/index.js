@@ -230,14 +230,6 @@ for (let i = 0; i < portfMenuItems.length; i++) {
   portfMenuItems[i].addEventListener("click", () => showItems(i));
 }
 
-// function addAll() {
-//  portfMenuItems[0].classList.remove("black-text");
-//  portfMenuItems[0].classList.add("red-text");
-//  for (let i = 0; i < portfItems.length; i++) {
-//    portfItems[i].classList.add("portfolio__item-shown");
-//  }
-// }
-
 function removeAll() {
   for (let i = 0; i < portfMenuItems.length; i++) {
     portfMenuItems[i].classList.remove("red-text");
