@@ -58,7 +58,10 @@
         <div class="container">
           <div class="swiper-container psychologist">
             <h4>
-              <span class="thick">Задача:</span> сделать прототип лендинга на основе подробного маркетингового исследования рынка и выявления наиболее мотивированной ЦА. Продажа онлайн-курса психолога для психологов
+              <span class="thick">Задача:</span> сделать прототип лендинга на
+              основе подробного маркетингового исследования рынка и выявления
+              наиболее мотивированной ЦА. Продажа онлайн-курса психолога для
+              психологов
             </h4>
             <div class="swiper-wrapper">
               <div class="swiper-slide">
@@ -81,9 +84,11 @@
             <div class="swiper-button-prev"></div>
           </div>
           <div class="swiper-container cosmetologist">
-             <h4>
-            <span class="thick">Задача:</span> написать текст для лендинга онлайн-курса косметолога на основе маркетингового анализа заказчика.
-          </h4>
+            <h4>
+              <span class="thick">Задача:</span> написать текст для лендинга
+              онлайн-курса косметолога на основе маркетингового анализа
+              заказчика.
+            </h4>
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <img
@@ -96,8 +101,10 @@
           </div>
           <div class="swiper-container crimea">
             <h4>
-            <span class="thick">Задача:</span>: сделать прототип лендинга для продажи двух элитных вилл в Крыму на основе подробного маркетингового исследования рынка и ЦА.
-          </h4>
+              <span class="thick">Задача:</span>: сделать прототип лендинга для
+              продажи двух элитных вилл в Крыму на основе подробного
+              маркетингового исследования рынка и ЦА.
+            </h4>
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <img
@@ -126,9 +133,10 @@
             <div class="swiper-button-prev"></div>
           </div>
           <div class="swiper-container copywriter">
-             <h4>
-            <span class="thick">Задача:</span> сделать прототип лендинга для портфолио копирайтера. Перед вами прототип этого сайта
-          </h4>
+            <h4>
+              <span class="thick">Задача:</span> сделать прототип лендинга для
+              портфолио копирайтера. Перед вами прототип этого сайта
+            </h4>
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <img
@@ -177,20 +185,18 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
     <script>
-      var swiper = new Swiper(".swiper-container", {
-        autoHeight: true, //enable auto height
-        spaceBetween: 20,
-        pagination: {
-          el: ".swiper-pagination",
-          type: "bullets",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
+      Array.from(document.querySelectorAll('.swiper-container')).forEach(function(domElement) {
+    new Swiper(domElement, { autoHeight: true, //enable auto height
+      spaceBetween: 20,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },});
+});
     </script>
-    
   </body>
 </html>
