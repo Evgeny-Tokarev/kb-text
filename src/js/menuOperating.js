@@ -4,7 +4,6 @@ function menuOperating(menu, item, passiveClass, activeClass, showClass) {
   for (let i = 0; i < item.length; i++) {
     additionalClasses[i] = item[i].classList[1];
   }
-console.log(additionalClasses);
   function getCountsSorted(arr) {
     var counts = [];
     var res = [];

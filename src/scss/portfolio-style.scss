@@ -52,31 +52,27 @@ body {
 }
 
 .articles h4 {
-	padding: 1rem 0 3rem 0;
+	margin: -1rem 0 3rem 0;
 }
 .screenshot {
 	display: block;
 	width: 100%;
 }
 .swiper-container {
-	// display: none;
-	// width: 100%;
-	// height: auto;
-	
+	display: none;
+	width: 100%;
+	height: auto;
 }
 .white-bg {
 	background-color: white;
 	color: $black;
-	  -webkit-transition: 0.4s linear;
-    -o-transition: 0.4s linear;
-    transition: 0.4s linear;
 }
 .black-bg {
 	background-color: $black;
 	color: white;
 	  -webkit-transition: 0.4s linear;
     -o-transition: 0.4s linear;
-    transition: 0.4s linear;
+    transition: 0.6s linear;
 }
 .swiper-shown {
 	display: block;
@@ -89,9 +85,9 @@ body {
 }
 
 .swiper-container-horizontal {
-	padding-top: 2rem !important;
+	padding-top: 3rem !important;
 }
 .swiper-container-horizontal > .swiper-pagination-bullets {
-	top: 0.5rem;
+	top: 4.5rem;
 	bottom: auto;
 }
