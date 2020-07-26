@@ -458,19 +458,21 @@
     opacity: 0.7;
     cursor: pointer;
   }
+
+}
   .black-text {
     color: $black;
     -webkit-transition: 0.4s linear;
     -o-transition: 0.4s linear;
     transition: 0.4s linear;
   }
-}
-.red-text {
+  .red-text {
   color: $red;
   -webkit-transition: 0.4s linear;
   -o-transition: 0.4s linear;
   transition: 0.4s linear;
 }
+
 .portfolio__items {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -482,7 +484,7 @@
 .portfolio__item {
   display: none;
 }
-.portfolio__item-shown {
+.item-shown {
   display: block;
   -webkit-box-flex: 1;
   -ms-flex: 1 0 25%;
@@ -490,6 +492,15 @@
   height: 15rem;
   border: 0.5rem solid #fff;
   background-color: $gray;
+  animation: showBlock 2s linear forwards;
+}
+@keyframes showBlock {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 /* slider*/
 .reviews {

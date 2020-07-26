@@ -20,19 +20,18 @@
 
     <link rel="shortcut icon" href="images/favico.jpg" type="image/x-icon" />
     <link rel="stylesheet" href="scss/reset.scss" />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"
     />
-    <link rel="stylesheet" href="scss/style.scss" />
-    <link rel="stylesheet" href="scss/portfolio-style.scss" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-    <link
+    <!--  <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
-
-    <!-- <link rel="stylesheet" href="css/media.css" /> -->
+    /> -->
+    <link rel="stylesheet" href="scss/style.scss" />
+    <link rel="stylesheet" href="scss/portfolio-style.scss" />
   </head>
   <body>
     <section class="portfolio-prototips">
@@ -62,7 +61,7 @@
             портфолио копирайтера. Перед вами прототип этого сайта
           </h4>
 
-          <div class="swiper-container">
+          <!-- <div class="swiper-container psychologist">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <img
@@ -78,6 +77,13 @@
                   alt="screenshot landind-page prototipe"
                 />
               </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+          <div class="swiper-container cosmetologist">
+            <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <img
                   src="images/portfolio/cosmetologist.jpg"
@@ -85,6 +91,10 @@
                   class="screenshot"
                 />
               </div>
+            </div>
+          </div>
+          <div class="swiper-container crimea">
+            <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <img
                   src="images/portfolio/crimea1.jpg"
@@ -106,7 +116,13 @@
                   class="screenshot"
                 />
               </div>
-
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div> -->
+          <div class="swiper-container copywriter">
+            <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <img
                   src="images/portfolio/copywriter1.jpg"
@@ -143,21 +159,22 @@
                 />
               </div>
             </div>
+            <div class="swiper-pagination"></div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
           </div>
         </div>
       </article>
     </section>
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
     <script>
       var swiper = new Swiper(".swiper-container", {
         autoHeight: true, //enable auto height
         spaceBetween: 20,
         pagination: {
           el: ".swiper-pagination",
+          type: "bullets",
           clickable: true,
         },
         navigation: {
@@ -166,9 +183,6 @@
         },
       });
     </script>
-    <script>
-      let prototipMenuItems = document.querySelectorAll(".main-menu>li");
-      let PrototipItems = document.querySelectorAll(".portfolio__item");
-    </script>
+    <script src="js/portfolio.js"></script>
   </body>
 </html>

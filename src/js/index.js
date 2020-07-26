@@ -219,66 +219,15 @@ window.onresize = function () {
 // ----------------------------------------------------------------------------
 
 // Меню портфолио
-let portfMenuItems = document.querySelectorAll(".portfolio__menu>li");
+let menuItems = document.querySelectorAll(".portfolio__menu>li");
 let portfItems = document.querySelectorAll(".portfolio__item");
 let bestWorks = document.querySelectorAll(".bestworks");
 let prototips = document.querySelectorAll(".prototips");
 let seo = document.querySelectorAll(".SEO");
 let posts = document.querySelectorAll(".posts");
+import {menuOperating} from './menuOperating.js';
 
-for (let i = 0; i < portfMenuItems.length; i++) {
-  portfMenuItems[i].addEventListener("click", () => showItems(i));
-}
-
-function removeAll() {
-  for (let i = 0; i < portfMenuItems.length; i++) {
-    portfMenuItems[i].classList.remove("red-text");
-    portfMenuItems[i].classList.add("black-text");
-  }
-  for (let i = 0; i < portfItems.length; i++) {
-    portfItems[i].classList.remove("portfolio__item-shown");
-  }
-}
-
-showItems(0);
-
-function showItems(n) {
-  switch (n) {
-    case 0:
-      removeAll();
-      portfMenuItems[0].classList.remove("black-text");
-      portfMenuItems[0].classList.add("red-text");
-      for (let i = 0; i < bestWorks.length; i++) {
-        bestWorks[i].classList.add("portfolio__item-shown");
-      }
-      break;
-    case 1:
-      removeAll();
-      portfMenuItems[1].classList.remove("black-text");
-      portfMenuItems[1].classList.add("red-text");
-      for (let i = 0; i < prototips.length; i++) {
-        prototips[i].classList.add("portfolio__item-shown");
-      }
-      break;
-    case 2:
-      removeAll();
-      portfMenuItems[2].classList.remove("black-text");
-      portfMenuItems[2].classList.add("red-text");
-      for (let i = 0; i < seo.length; i++) {
-        seo[i].classList.add("portfolio__item-shown");
-      }
-      break;
-    case 3:
-      removeAll();
-      portfMenuItems[3].classList.remove("black-text");
-      portfMenuItems[3].classList.add("red-text");
-      for (let i = 0; i < posts.length; i++) {
-        posts[i].classList.add("portfolio__item-shown");
-      }
-      break;
-  }
-}
-
+menuOperating(menuItems, portfItems, "black-text","red-text", "item-shown"); 
 // Плавный скролл
 let anchors = document.querySelectorAll(
   ".main-menu a,.burger__menu a,.call-to-action__buttons a, .top-scroll"
