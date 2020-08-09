@@ -1,18 +1,62 @@
 function showSection(
   menuItems,
-  sections,
+  item,
   passiveClass,
   activeClass,
   classHidden,
   showSectionIndex
 ) {
+   let additionalClasses = [];
+
+  for (let i = 0; i < item.length; i++) {
+    additionalClasses[i] = item[i].classList[1];
+  }
+  console.log(additionalClasses);
+   function getCountsSorted(arr) {
+    var counts = [];
+    var res = [];
+
+    for (var i in arr) {
+      if (counts[arr[i]]) {
+        counts[arr[i]]++;
+      } else {
+        counts[arr[i]] = 1;
+      }
+    }
+
+    var j = 0;
+    for (var i in counts) {
+      res[j++] = {
+        arrayItem: i,
+        count: counts[i],
+      };
+    }
+    return res;
+  }
+   console.log( getCountsSorted(additionalClasses));
+
   menuItems.forEach((menuItem, i) => {
     menuItem.classList.toggle(passiveClass, i != showSectionIndex);
     menuItem.classList.toggle(activeClass, i == showSectionIndex);
   });
-  sections.forEach((section, i) => {
-    section.classList.toggle(classHidden, i != showSectionIndex);
-  });
+   function removeAll() {
+    for (let i = 0; i < item.length; i++) {
+      item[i].classList.add(classHidden);
+    }
+  }
+
+  function showItems(showSectionIndex) {
+    removeAll();
+    for (let i = 0; i < getCountsSorted(additionalClasses)[showSectionIndex].count; i++) {
+      for (let i = 0; i < item.length; i++) {
+        if (item[i].classList[1] == getCountsSorted(additionalClasses)[showSectionIndex].arrayItem) {
+          item[i].classList.remove(classHidden);
+        }
+      }
+    }
+  }
+  showItems(showSectionIndex);
+ 
 }
 
 function menuOperating(

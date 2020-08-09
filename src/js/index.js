@@ -227,7 +227,8 @@ let seo = document.querySelectorAll(".SEO");
 let posts = document.querySelectorAll(".posts");
 import {menuOperating} from './menuOperating.js';
 
-menuOperating(menuItems, portfItems, "black-text","red-text", "item-shown"); 
+
+menuOperating(menuItems, portfItems, "black-text","red-text", "item-hidden"); 
 // Плавный скролл
 let anchors = document.querySelectorAll(
   ".main-menu a,.burger__menu a,.call-to-action__buttons a, .top-scroll"
