@@ -113,13 +113,8 @@ function rightMove() {
 }
 
 function picGrow() {
-  if (fl == 0) {
-    slides[1].classList.add("slider__img__big");
-    fl = 1;
-  } else {
-    slides[1].classList.remove("slider__img__big");
-    fl = 0;
-  }
+
+    slides[1].classList.toggle("slider__img__big");
 }
 
 // Работа с тачскрином
