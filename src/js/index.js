@@ -54,6 +54,31 @@ burger.addEventListener("touchend", function (e) {
 burger.addEventListener("touchcancel", function (e) {
   TouchEnd(e);
 });
+let accordion = document.querySelectorAll(".accordion__item");
+  let heights = [];
+  console.log(accordion);
+  accordion.forEach((item, i) => {
+    heights[i] = item.children[1].offsetHeight;
+    console.log(heights[i]);
+    console.log(i)
+    item.children[1].style.maxHeight = 0;
+  });
+  console.log(heights);  accordion.forEach((item, i) => {
+    item.children[0].addEventListener("click", () => accordionOperating(i));
+  });
+  
+  function accordionOperating(number) {
+    let text = accordion[number].children[1];
+    let head = accordion[number].children[0];
+    text.classList.toggle("show");
+    if (text.classList.contains("show")) {
+      text.style.maxHeight = heights[number] + "px";
+    } else {
+      text.style.maxHeight = 0;
+    }
+
+    head.classList.toggle("show");
+  }
 
 function sliderOperating() {
   function lengSet() {

@@ -473,6 +473,11 @@
   animation: showBlock 1s linear forwards;
   
 }
+.portfolio__item:last-child {
+  height: auto;
+  text-align: left;
+  background-color: #fff;
+}
 .item-hidden {
  display: none;
 }

@@ -1,3 +1,6 @@
+
+
+
 function showSection(
   menuItems,
   item,
@@ -6,13 +9,12 @@ function showSection(
   classHidden,
   showSectionIndex
 ) {
-   let additionalClasses = [];
+  let additionalClasses = [];
 
   for (let i = 0; i < item.length; i++) {
     additionalClasses[i] = item[i].classList[1];
   }
-  console.log(additionalClasses);
-   function getCountsSorted(arr) {
+  function getCountsSorted(arr) {
     var counts = [];
     var res = [];
 
@@ -33,13 +35,12 @@ function showSection(
     }
     return res;
   }
-   console.log( getCountsSorted(additionalClasses));
 
   menuItems.forEach((menuItem, i) => {
     menuItem.classList.toggle(passiveClass, i != showSectionIndex);
     menuItem.classList.toggle(activeClass, i == showSectionIndex);
   });
-   function removeAll() {
+  function removeAll() {
     for (let i = 0; i < item.length; i++) {
       item[i].classList.add(classHidden);
     }
@@ -47,16 +48,26 @@ function showSection(
 
   function showItems(showSectionIndex) {
     removeAll();
-    for (let i = 0; i < getCountsSorted(additionalClasses)[showSectionIndex].count; i++) {
+    for (
+      let i = 0;
+      i < getCountsSorted(additionalClasses)[showSectionIndex].count;
+      i++
+    ) {
       for (let i = 0; i < item.length; i++) {
-        if (item[i].classList[1] == getCountsSorted(additionalClasses)[showSectionIndex].arrayItem) {
+        if (
+          item[i].classList[1] ==
+          getCountsSorted(additionalClasses)[showSectionIndex].arrayItem
+        ) {
           item[i].classList.remove(classHidden);
+        
         }
       }
     }
   }
   showItems(showSectionIndex);
- 
+  
+
+  
 }
 
 function menuOperating(

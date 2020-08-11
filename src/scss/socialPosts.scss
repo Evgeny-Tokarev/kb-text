@@ -1,26 +1,26 @@
 @use "common" as *;
-h2 {
-	text-align: center;
-	padding: 2rem 0;
-}
 .accordion__item {
 	width: 100%;
+	padding: 1rem;
 	border: 1px solid $black;
 	overflow: hidden;
-	padding: 1rem;
-	h4 {
-		// margin: 0 0 2rem 0;
-	}
+	margin-bottom: 2px;
+	
 }
 .accordion__header {
+	
 	position: relative;
 }
+.accordion__header h4 {
+	max-width: 90%;
+}
 .accordion__content {
+
 	overflow: hidden;
 	transition: all 0.5s linear;
 }
-.accordion__content.show {
-}
+
+
 
 .accordion__header:before {
 	content: "";
@@ -31,7 +31,7 @@ h2 {
 	right: 30px;
 	top: 50%;
 	@include transform(translate(3px, -50%) rotate(45deg));
-	transition: 0.3s linear;
+	transition: 0.5s linear;
 }
 .accordion__header.show:before {
 	@include transform(translate(3px, -50%) rotate(-45deg));
@@ -45,7 +45,7 @@ h2 {
 	right: 15px;
 	top: 50%;
 	@include transform(translate(-2px, -50%) rotate(-45deg));
-	transition: 0.3s linear;
+	transition: 0.5s linear;
 }
 .accordion__header.show:after {
 	@include transform(translate(-2px, -50%) rotate(45deg));
