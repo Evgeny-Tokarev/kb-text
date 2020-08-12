@@ -66,7 +66,7 @@ let accordion = document.querySelectorAll(".accordion__item");
   console.log(heights);  accordion.forEach((item, i) => {
     item.children[0].addEventListener("click", () => accordionOperating(i));
   });
-  
+
   function accordionOperating(number) {
     let text = accordion[number].children[1];
     let head = accordion[number].children[0];
@@ -87,6 +87,12 @@ function sliderOperating() {
     } else {
       leng = 1;
     }
+    if (window.matchMedia("(min-width: 800px)").msMatchesSelector) {
+      leng = 3;
+    } else {
+      leng = 1;
+    }
+    
   }
   lengSet();
   for (let i = 0; i < leng; i++) {

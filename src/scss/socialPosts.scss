@@ -12,7 +12,12 @@
 	position: relative;
 }
 .accordion__header h4 {
-	max-width: 90%;
+	width: 85%;
+}
+@media screen and (max-width: 600px) {
+.accordion__header h4 {
+	width: 75%;
+}
 }
 .accordion__content {
 
