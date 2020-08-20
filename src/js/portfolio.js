@@ -19,7 +19,6 @@ qsa(".swiper-container").forEach((domElement) => {
 
 let menuItems = qsa(".main-menu > li");
 let sections = qsa("section[data-section]");
-console.log(sections);
 menuOperating(menuItems, sections, "white-bg", "black-bg", "section--hidden");
 
 export { sections as prototipItems };

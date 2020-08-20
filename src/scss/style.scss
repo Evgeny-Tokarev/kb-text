@@ -25,8 +25,6 @@
   margin: 10px auto 20px auto;
 }
 
-
-
 .action__button {
   display: block;
   text-align: center;
@@ -53,7 +51,6 @@
   box-shadow: inset 0 0 10px rgba(256, 256, 256, 0.5);
 }
 
-
 #header {
   @include fullsizecentered;
   background-color: $light-gray;
@@ -64,8 +61,6 @@
   @include fullsizecentered;
   background-color: $black;
 }
-
-
 
 .main-menu__item a:hover,
 .main-menu__item a:active {
@@ -84,18 +79,18 @@
   height: 36px;
   background-color: $black;
 
-    .burger__label {
-      width: 30px;
-      height: 3px;
-      background-color: #fff;
-      position: absolute;
-      top: 15px;
-      left: 3px;
-      z-index: 15;
-      -webkit-transition: 0.5s linear;
-      -o-transition: 0.5s linear;
-      transition: 0.5s linear;
-    }
+  .burger__label {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    top: 15px;
+    left: 3px;
+    z-index: 15;
+    -webkit-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
+  }
 
   .burger__label:before {
     display: block;
@@ -105,10 +100,10 @@
     background-color: #fff;
     position: absolute;
     top: -7px;
-     z-index: 15;
-      -webkit-transition: 0.5s linear;
-      -o-transition: 0.5s linear;
-      transition: 0.5s linear;
+    z-index: 15;
+    -webkit-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
   }
 
   .burger__label:after {
@@ -119,10 +114,10 @@
     background-color: #fff;
     position: absolute;
     top: 7px;
-     z-index: 15;
-      -webkit-transition: 0.5s linear;
-      -o-transition: 0.5s linear;
-      transition: 0.5s linear;
+    z-index: 15;
+    -webkit-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
   }
 
   .burger__menu {
@@ -191,6 +186,7 @@
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  height: auto;
   .presentation__text {
     -webkit-box-flex: 3;
     -ms-flex: 3 1 0px;
@@ -208,6 +204,7 @@
     -ms-flex-align: start;
     align-items: flex-start;
     margin-right: 1rem;
+    height: 100%;
     h1 {
       width: 100%;
       font-size: 3rem;
@@ -252,13 +249,17 @@
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-end;
-    img {
-      width: 100%;
-      -o-object-fit: contain;
-      object-fit: contain;
-      -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
+    background: url(../images/KatePhoto.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    // img {
+    //   width: 100%;
+    //   -o-object-fit: contain;
+    //   object-fit: contain;
+    //   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    //   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    // }
   }
 }
 
@@ -439,15 +440,14 @@
     opacity: 0.7;
     cursor: pointer;
   }
-
 }
-  .black-text {
-    color: $black;
-    -webkit-transition: 0.4s linear;
-    -o-transition: 0.4s linear;
-    transition: 0.4s linear;
-  }
-  .red-text {
+.black-text {
+  color: $black;
+  -webkit-transition: 0.4s linear;
+  -o-transition: 0.4s linear;
+  transition: 0.4s linear;
+}
+.red-text {
   color: $red;
   -webkit-transition: 0.4s linear;
   -o-transition: 0.4s linear;
@@ -463,15 +463,15 @@
   flex-wrap: wrap;
 }
 .portfolio__item {
-   display: block;
+  display: block;
   -webkit-box-flex: 1;
   -ms-flex: 1 0 25%;
   flex: 1 0 25%;
   height: 15rem;
   border: 0.5rem solid #fff;
   background-color: $gray;
+  -webkit-animation: showBlock 1s linear forwards;
   animation: showBlock 1s linear forwards;
-  
 }
 .portfolio__item:last-child {
   height: auto;
@@ -479,7 +479,15 @@
   background-color: #fff;
 }
 .item-hidden {
- display: none;
+  display: none;
+}
+@-webkit-keyframes showBlock {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @keyframes showBlock {
   0% {
@@ -746,6 +754,7 @@ footer {
     -webkit-box-direction: reverse;
     -ms-flex-direction: column-reverse;
     flex-direction: column-reverse;
+    align-items: center;
     .presentation__text {
       -webkit-box-flex: 1;
       -ms-flex: 1 1 100%;
@@ -768,15 +777,16 @@ footer {
     }
     .presentation__photo {
       -webkit-box-flex: 1;
-      -ms-flex: 1 1 100%;
-      flex: 1 1 100%;
+      -ms-flex: 1 1 457px;
+      flex: 1 1 457px;
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center;
       margin-bottom: 5%;
-      img {
-        width: 50%;
-      }
+      width: 50%;
+      // img {
+      //   width: 50%;
+      // }
     }
   }
   .services__inner {

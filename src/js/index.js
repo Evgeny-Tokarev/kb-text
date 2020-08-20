@@ -1,8 +1,19 @@
 // Инициализируем wowjs
 new WOW().init();
+import "regenerator-runtime/runtime";
+import "core-js/stable";
 
+(async () => {
+  console.log("hello world!");
+})().catch(console.error);
+if (!Element.prototype.matches) {
+
+    Element.prototype.matches = Element.prototype.msMatchesSelector;
+
+}
 // Все блоки слайдов
 let slides = document.querySelectorAll(".slider__img");
+console.log(getComputedStyle(slides[0]).maxWidth);
 
 // Будет хранить URL картинок
 let slider = [];
@@ -56,14 +67,12 @@ burger.addEventListener("touchcancel", function (e) {
 });
 let accordion = document.querySelectorAll(".accordion__item");
   let heights = [];
-  console.log(accordion);
   accordion.forEach((item, i) => {
     heights[i] = item.children[1].offsetHeight;
-    console.log(heights[i]);
-    console.log(i)
+
     item.children[1].style.maxHeight = 0;
   });
-  console.log(heights);  accordion.forEach((item, i) => {
+    accordion.forEach((item, i) => {
     item.children[0].addEventListener("click", () => accordionOperating(i));
   });
 
@@ -82,12 +91,7 @@ let accordion = document.querySelectorAll(".accordion__item");
 
 function sliderOperating() {
   function lengSet() {
-    if (window.matchMedia("(min-width: 800px)").matches) {
-      leng = 3;
-    } else {
-      leng = 1;
-    }
-    if (window.matchMedia("(min-width: 800px)").msMatchesSelector) {
+    if (getComputedStyle(slides[0]).maxWidth == 33.33+'%') {
       leng = 3;
     } else {
       leng = 1;
@@ -95,6 +99,7 @@ function sliderOperating() {
     
   }
   lengSet();
+  console.log(leng);
   for (let i = 0; i < leng; i++) {
     counter[i] = i;
   }

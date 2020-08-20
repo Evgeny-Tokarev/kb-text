@@ -7,20 +7,27 @@
   "author": "",
   "license": "ISC",
   "scripts": {
+    "clean": "rimraf dist/*",
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html",
-    "format": "prettier --write .",
-    "babel": "babel src -d lib"
+    "build": "npm run clean && parcel build src/index.html",
+    "serve": "serve dist"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.10.4",
+    "core-js": "^3.6.5",
+    "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.5",
-    "@babel/core": "^7.11.1",
+    "@babel/core": "^7.11.0",
     "@babel/preset-env": "^7.11.0",
     "parcel-bundler": "^1.12.4",
     "prettier": "^2.0.5",
-    "sass": "^1.26.10"
+    "rimraf": "^3.0.2",
+    "sass": "^1.26.10",
+    "serve": "^11.3.2"
   },
-  "dependencies": {
-    "@babel/polyfill": "^7.10.4"
-  }
+  "browserslist": [
+    "defaults",
+    "IE 11"
+  ]
 }
