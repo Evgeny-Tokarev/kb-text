@@ -98,7 +98,6 @@ function accordionOperating(number) {
   // Закрывает иные открытые элементы
   accordion.forEach((item, i) => {
     if (i !== number && item.children[0].classList.contains("show")) {
-      console.log("removing " + i);
       item.children[1].style.maxHeight = 0;
       item.children[0].classList.toggle("show");
       item.children[1].classList.toggle("show");
@@ -124,7 +123,6 @@ function sliderOperating() {
     }
   }
   lengSet();
-  console.log(leng);
   for (let i = 0; i < leng; i++) {
     counter[i] = i;
   }
