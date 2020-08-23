@@ -7,9 +7,7 @@ import "core-js/stable";
   console.log("hello world!");
 })().catch(console.error);
 if (!Element.prototype.matches) {
-
-    Element.prototype.matches = Element.prototype.msMatchesSelector;
-
+  Element.prototype.matches = Element.prototype.msMatchesSelector;
 }
 // Все блоки слайдов
 let slides = document.querySelectorAll(".slider__img");
@@ -65,38 +63,65 @@ burger.addEventListener("touchend", function (e) {
 burger.addEventListener("touchcancel", function (e) {
   TouchEnd(e);
 });
+// Аккордион
+
 let accordion = document.querySelectorAll(".accordion__item");
-  let heights = [];
+let heights = [];
+accordion.forEach((item, i) => {
+  heights[i] = item.children[1].offsetHeight;
+
+  item.children[1].style.maxHeight = 0;
+});
+accordion.forEach((item, i) => {
+  item.children[0].addEventListener("click", () => accordionOperating(i));
+});
+window.addEventListener("scroll", accordScroll);
+function accordScroll() {
   accordion.forEach((item, i) => {
-    heights[i] = item.children[1].offsetHeight;
-
-    item.children[1].style.maxHeight = 0;
-  });
-    accordion.forEach((item, i) => {
-    item.children[0].addEventListener("click", () => accordionOperating(i));
-  });
-
-  function accordionOperating(number) {
-    let text = accordion[number].children[1];
-    let head = accordion[number].children[0];
-    text.classList.toggle("show");
-    if (text.classList.contains("show")) {
-      text.style.maxHeight = heights[number] + "px";
-    } else {
-      text.style.maxHeight = 0;
+    let target = item.children[1];
+    // Проверка на скролл открытых элементов аккордеона за область экрана вниз или вверх
+    if (
+      target.classList.contains("show") &&
+      (window.pageYOffset + target.getBoundingClientRect().top >
+        window.pageYOffset + document.documentElement.clientHeight ||
+        window.pageYOffset + target.getBoundingClientRect().bottom <
+          window.pageYOffset)
+    ) {
+      accordionOperating(i);
     }
+  });
+}
 
-    head.classList.toggle("show");
+function accordionOperating(number) {
+  let head = accordion[number].children[0];
+  let text = accordion[number].children[1];
+  // Закрывает иные открытые элементы
+  accordion.forEach((item, i) => {
+    if (i !== number && item.children[0].classList.contains("show")) {
+      console.log("removing " + i);
+      item.children[1].style.maxHeight = 0;
+      item.children[0].classList.toggle("show");
+      item.children[1].classList.toggle("show");
+    }
+  });
+  // Открывает элемент
+  text.classList.toggle("show");
+  if (text.classList.contains("show")) {
+    text.style.maxHeight = heights[number] + "px";
+  } else {
+    text.style.maxHeight = 0;
   }
+
+  head.classList.toggle("show");
+}
 
 function sliderOperating() {
   function lengSet() {
-    if (getComputedStyle(slides[0]).maxWidth == 33.33+'%') {
+    if (getComputedStyle(slides[0]).maxWidth == 33.33 + "%") {
       leng = 3;
     } else {
       leng = 1;
     }
-    
   }
   lengSet();
   console.log(leng);
@@ -149,8 +174,7 @@ function rightMove() {
 }
 
 function picGrow() {
-
-    slides[1].classList.toggle("slider__img__big");
+  slides[1].classList.toggle("slider__img__big");
 }
 
 // Работа с тачскрином
@@ -252,14 +276,14 @@ window.onresize = function () {
 // Меню портфолио
 let menuItems = document.querySelectorAll(".portfolio__menu>li");
 let portfItems = document.querySelectorAll(".portfolio__item");
-let bestWorks = document.querySelectorAll(".bestworks");
-let prototips = document.querySelectorAll(".prototips");
-let seo = document.querySelectorAll(".SEO");
-let posts = document.querySelectorAll(".posts");
-import {menuOperating} from './menuOperating.js';
+// let bestWorks = document.querySelectorAll(".bestworks");
+// let prototips = document.querySelectorAll(".prototips");
+// let seo = document.querySelectorAll(".SEO");
+// let posts = document.querySelectorAll(".posts");
+import { menuOperating } from "./menuOperating.js";
 
+menuOperating(menuItems, portfItems, "black-text", "red-text", "item-hidden");
 
-menuOperating(menuItems, portfItems, "black-text","red-text", "item-hidden"); 
 // Плавный скролл
 let anchors = document.querySelectorAll(
   ".main-menu a,.burger__menu a,.call-to-action__buttons a, .top-scroll"
