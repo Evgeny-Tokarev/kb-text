@@ -10,8 +10,6 @@ if (!Element.prototype.matches) {
   Element.prototype.matches = Element.prototype.msMatchesSelector;
 }
 // Все блоки слайдов
-let slides = document.querySelectorAll(".slider__img");
-console.log(getComputedStyle(slides[0]).maxWidth);
 
 // Будет хранить URL картинок
 let slider = [];
@@ -19,10 +17,6 @@ let row = document.querySelector(".slider-row");
 let screen = document.querySelector("body");
 let burger = document.querySelector(".burger__menu");
 let button = document.querySelector("#burger__button");
-
-for (let i = 0; i < slides.length; i++) {
-  slider[i] = getComputedStyle(slides[i]).backgroundImage;
-}
 
 // Счётчики для номеров фона
 let counter = [];
@@ -113,16 +107,20 @@ function accordionOperating(number) {
 
   head.classList.toggle("show");
 }
-
+let slides;
 function sliderOperating() {
-  function lengSet() {
-    if (getComputedStyle(slides[0]).maxWidth == 33.33 + "%") {
-      leng = 3;
-    } else {
-      leng = 1;
-    }
+  slides = document.querySelectorAll(".slider__img");
+  for (let i = 0; i < slides.length; i++) {
+    slider[i] = getComputedStyle(slides[i]).backgroundImage;
   }
-  lengSet();
+  console.log(slides[0]);
+  console.log(getComputedStyle(slides[0]).maxWidth);
+  if (getComputedStyle(slides[0]).maxWidth == 33.33 + "%") {
+    leng = 3;
+  } else {
+    leng = 1;
+  }
+
   for (let i = 0; i < leng; i++) {
     counter[i] = i;
   }

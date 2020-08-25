@@ -207,7 +207,6 @@
     height: 100%;
     h1 {
       width: 100%;
-      font-size: 3rem;
       font-weight: 800;
       text-transform: uppercase;
     }
@@ -221,7 +220,7 @@
       width: 100%;
       p {
         width: 100%;
-        font-size: 1.4rem;
+        font-size: 1.5rem;
       }
 
       .call-to-action__buttons {
@@ -287,7 +286,6 @@
   p {
     width: 100%;
     margin-bottom: 2.25rem;
-    font-size: 1.2rem;
   }
 }
 .other-services {
@@ -325,7 +323,6 @@
   }
   p {
     width: 100%;
-    font-size: 1.2rem;
   }
 }
 .gray-underliner {
@@ -342,9 +339,6 @@
 .stages__inner {
   display: block;
   text-align: left;
-  h2 {
-    padding: 2rem 0;
-  }
 }
 .stages__items {
   display: -webkit-box;
@@ -366,12 +360,10 @@
   padding-left: 75px;
   position: relative;
   padding: 1rem 1rem 1rem 4.7rem;
-  h4 {
-    font-size: 1.5rem;
+  h3 {
     font-weight: 600;
   }
   p {
-    font-size: 1.4rem;
     font-weight: 400;
     padding: 0.5rem 0;
   }
@@ -401,11 +393,7 @@
 .portfolio__inner {
   text-align: center;
   padding: 2rem 0;
-  h2 {
-    padding: 1rem 0;
-  }
   p {
-    font-size: 1.4rem;
     padding: 1rem 0;
     opacity: 0.7;
   }
@@ -429,7 +417,7 @@
   li {
     display: block;
     margin: 1rem;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 700;
     text-transform: uppercase;
     opacity: 0.7;
@@ -496,9 +484,6 @@
 .reviews {
   text-align: center;
   padding: 0 0 4rem 0;
-  h2 {
-    padding: 1rem 0;
-  }
 }
 .reviews__slider {
   width: 80%;
@@ -582,7 +567,6 @@
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     p {
-      font-size: 1.4rem;
       padding: 1rem 0;
     }
   }
@@ -602,7 +586,7 @@
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-between;
-        font-size: 1.3rem;
+        // font-size: 1.3rem;
         font-weight: 600;
       }
       hr {
@@ -633,9 +617,8 @@
   }
 }
 .certificates__inner {
-  p {
+  h3 {
     text-align: center;
-    font-size: 1.4rem;
     padding: 5rem 0;
   }
 }
@@ -668,7 +651,6 @@
     padding: 1rem 0 1.5rem 0;
   }
   p {
-    size: 1.4rem;
     padding: 1rem 0;
   }
 }
@@ -699,9 +681,8 @@ footer {
   background-color: #313030;
   text-align: center;
   h3 {
-    font-size: 1.5rem;
     color: #fff;
-    padding: 1rem 0 1rem 0;
+    padding: 1rem 0;
   }
 }
 .social__icons {
@@ -740,7 +721,7 @@ footer {
   display: block;
   font-size: 1.2rem;
 }
-.email {
+.advanced-contacts:last-child {
   padding: 0.5rem 0 1rem 0;
 }
 
@@ -802,6 +783,7 @@ footer {
     align-items: center;
     text-align: center;
     margin-bottom: 3rem;
+    margin-right: 0;
   }
   .other-services {
     -webkit-box-flex: 1;
@@ -824,14 +806,11 @@ footer {
     flex: 1 0 33.33%;
   }
   .slider-row {
-    height: 20rem;
+    height: 80vh;
   }
 }
 
 @media screen and (max-width: 800px) {
-  html {
-    font-size: 12px;
-  }
   .container {
     width: 90%;
   }
@@ -916,7 +895,6 @@ footer {
     .presentation__text {
       h1 {
         text-align: center;
-        font-size: 2.7rem;
       }
 
       .call-to-action__buttons {
@@ -976,9 +954,9 @@ footer {
     max-width: 100%;
   }
 
-  .slider-row {
-    height: 50vh;
-  }
+  // .slider-row {
+  //   height: 50vh;
+  // }
 
   .slider__img {
     -webkit-box-flex: 0;
@@ -1004,7 +982,7 @@ footer {
         .h3__wrapper {
           flex-direction: column;
           text-align: left;
-          font-size: 1.2rem;
+          // font-size: 1.2rem;
           text-align: center;
           .pricessH3Left {
             margin-right: 0;
