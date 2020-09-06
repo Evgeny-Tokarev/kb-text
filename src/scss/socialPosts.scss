@@ -5,27 +5,22 @@
 	border: 1px solid $black;
 	overflow: hidden;
 	margin-bottom: 2px;
-	
 }
 .accordion__header {
-	
 	position: relative;
 }
-.accordion__header h4 {
+.accordion__header h3 {
 	width: 85%;
 }
 @media screen and (max-width: 600px) {
-.accordion__header h4 {
-	width: 75%;
-}
+	.accordion__header h3 {
+		width: 75%;
+	}
 }
 .accordion__content {
-
 	overflow: hidden;
 	transition: all 0.5s linear;
 }
-
-
 
 .accordion__header:before {
 	content: "";

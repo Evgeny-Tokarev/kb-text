@@ -2,30 +2,36 @@
 new WOW().init();
 import "regenerator-runtime/runtime";
 import "core-js/stable";
+import "swiper/swiper-bundle.css";
+import "../index.css";
 
+import Swiper from "swiper/bundle";
+
+var swiper = new Swiper(".swiper-container", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  coverflowEffect: {
+    rotate: 50,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: true,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+  },
+});
 (async () => {
   console.log("hello world!");
 })().catch(console.error);
 if (!Element.prototype.matches) {
   Element.prototype.matches = Element.prototype.msMatchesSelector;
 }
-// Все блоки слайдов
-
-// Будет хранить URL картинок
-let slider = [];
-let row = document.querySelector(".slider-row");
 let screen = document.querySelector("body");
 let burger = document.querySelector(".burger__menu");
 let button = document.querySelector("#burger__button");
-
-// Счётчики для номеров фона
-let counter = [];
-
-//Флаг для действий
-let fl = 0;
-
-// Количество картинок в строке
-let leng;
 
 function removeBurger(e) {
   if (
@@ -107,71 +113,6 @@ function accordionOperating(number) {
 
   head.classList.toggle("show");
 }
-let slides;
-function sliderOperating() {
-  slides = document.querySelectorAll(".slider__img");
-  for (let i = 0; i < slides.length; i++) {
-    slider[i] = getComputedStyle(slides[i]).backgroundImage;
-  }
-  console.log(slides[0]);
-  console.log(getComputedStyle(slides[0]).maxWidth);
-  if (getComputedStyle(slides[0]).maxWidth == 33.33 + "%") {
-    leng = 3;
-  } else {
-    leng = 1;
-  }
-
-  for (let i = 0; i < leng; i++) {
-    counter[i] = i;
-  }
-  if (leng == 1) {
-    slides[0].style.opacity = 1;
-    slides[0].classList.remove("slider__img__small");
-  } else {
-    slides[0].style.opacity = 0.3;
-    slides[0].classList.add("slider__img__small");
-    slides[2].style.opacity = 0.3;
-    slides[2].classList.add("slider__img__small");
-  }
-}
-
-function styleSet() {
-  for (let i = 0; i < leng; i++) {
-    slides[i].style.backgroundImage = slider[counter[i]];
-  }
-}
-
-function leftMoveCheck() {
-  if (leng == 3) {
-    leftMove();
-  }
-}
-
-function leftMove() {
-  for (let i = 0; i < leng; i++) {
-    if (counter[i] < slides.length - 1) {
-      counter[i]++;
-    } else {
-      counter[i] = 0;
-    }
-  }
-  styleSet();
-}
-
-function rightMove() {
-  for (let i = 0; i < leng; i++) {
-    if (counter[i] > 0) {
-      counter[i]--;
-    } else {
-      counter[i] = slides.length - 1;
-    }
-  }
-  styleSet();
-}
-
-function picGrow() {
-  slides[1].classList.toggle("slider__img__big");
-}
 
 // Работа с тачскрином
 
@@ -212,73 +153,35 @@ function CheckAction(trg) {
     d > 0
   ) {
     button.checked = false;
-  } else {
-    if (Math.abs(d) > sensitivity && trg.classList.contains("slider__img")) {
-      //Проверяем, было ли движение достаточно длинным
-      if (d > 0) {
-        //Если значение больше нуля, значит пользователь двигал пальцем справа налево
-        leftMove();
-      } //Иначе он двигал им слева направо
-      else {
-        rightMove();
-      }
-    }
   }
 }
-
-sliderOperating();
-styleSet();
-
-// Клик по левой картинке
-slides[0].addEventListener("click", leftMoveCheck);
-
-// Клик по правой картинке
-slides[2].addEventListener("click", rightMove);
-
-//клик по центральной картинке
-slides[1].addEventListener("click", picGrow);
-
-// ----------------------------------------------------------------------------
-// Тач события
-
-// Начало касания
-row.addEventListener("touchstart", function (e) {
-  TouchStart(e);
-});
-
-// Движение пальцем по экрану
-row.addEventListener("touchmove", function (e) {
-  TouchMove(e);
-});
-
-// Пользователь отпустил экран
-row.addEventListener("touchend", function (e) {
-  TouchEnd(e);
-});
-
-// Отмена касания
-row.addEventListener("touchcancel", function (e) {
-  TouchEnd(e);
-});
-
-// ----------------------------------------------------------------------------
-
-window.onresize = function () {
-  sliderOperating();
-};
-
 // ----------------------------------------------------------------------------
 
 // Меню портфолио
 let menuItems = document.querySelectorAll(".portfolio__menu>li");
 let portfItems = document.querySelectorAll(".portfolio__item");
-// let bestWorks = document.querySelectorAll(".bestworks");
-// let prototips = document.querySelectorAll(".prototips");
-// let seo = document.querySelectorAll(".SEO");
-// let posts = document.querySelectorAll(".posts");
 import { menuOperating } from "./menuOperating.js";
 
 menuOperating(menuItems, portfItems, "black-text", "red-text", "item-hidden");
+
+// Отзывы
+
+let review = document.querySelectorAll(".review__content");
+let seeMore = document.querySelectorAll(".see-more__button");
+let reviewHeights = [];
+seeMore.forEach((item, i) => {
+  item.addEventListener("click", () => reviewOperating(i));
+  reviewHeights[i] = review[i].offsetHeight;
+});
+function reviewOperating(n) {
+  review[n].classList.toggle("full-size");
+  review[n].parentNode.classList.toggle("full-size-wrapper");
+  if (review[n].classList.contains("full-size")) {
+    review[n].nextElementSibling.innerHTML = "свернуть";
+  } else {
+    review[n].nextElementSibling.innerHTML = "читать всё...";
+  }
+}
 
 // Плавный скролл
 let anchors = document.querySelectorAll(

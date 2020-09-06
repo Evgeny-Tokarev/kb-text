@@ -15,7 +15,9 @@
   "dependencies": {
     "@babel/polyfill": "^7.10.4",
     "core-js": "^3.6.5",
-    "regenerator-runtime": "^0.13.7"
+    "regenerator-runtime": "^0.13.7",
+    "scss": "^0.2.4",
+    "swiper": "^6.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.0",
