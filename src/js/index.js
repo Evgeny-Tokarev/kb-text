@@ -1,11 +1,15 @@
-// Инициализируем wowjs
-new WOW().init();
-import "regenerator-runtime/runtime";
-import "core-js/stable";
 import "swiper/swiper-bundle.css";
 import "../index.css";
 
+import "./lib/polyfills";
+import "regenerator-runtime/runtime";
+import "core-js/stable";
 import Swiper from "swiper/bundle";
+import { qs } from "./lib/utils";
+import { menuOperating } from "./menuOperating.js";
+
+// Инициализируем wowjs
+new WOW().init();
 
 var swiper = new Swiper(".swiper-container", {
   effect: "coverflow",
@@ -23,15 +27,10 @@ var swiper = new Swiper(".swiper-container", {
     el: ".swiper-pagination",
   },
 });
-(async () => {
-  console.log("hello world!");
-})().catch(console.error);
-if (!Element.prototype.matches) {
-  Element.prototype.matches = Element.prototype.msMatchesSelector;
-}
-let screen = document.querySelector("body");
-let burger = document.querySelector(".burger__menu");
-let button = document.querySelector("#burger__button");
+
+let screen = qs("body");
+let burger = qs(".burger__menu");
+let button = qs("#burger__button");
 
 function removeBurger(e) {
   if (
@@ -63,19 +62,21 @@ burger.addEventListener("touchend", function (e) {
 burger.addEventListener("touchcancel", function (e) {
   TouchEnd(e);
 });
+
 // Аккордион
 
-let accordion = document.querySelectorAll(".accordion__item");
+let accordion = qsa(".accordion__item");
 let heights = [];
+
 accordion.forEach((item, i) => {
   heights[i] = item.children[1].offsetHeight;
 
   item.children[1].style.maxHeight = 0;
-});
-accordion.forEach((item, i) => {
   item.children[0].addEventListener("click", () => accordionOperating(i));
 });
+
 window.addEventListener("scroll", accordScroll);
+
 function accordScroll() {
   accordion.forEach((item, i) => {
     let target = item.children[1];
@@ -103,6 +104,7 @@ function accordionOperating(number) {
       item.children[1].classList.toggle("show");
     }
   });
+
   // Открывает элемент
   text.classList.toggle("show");
   if (text.classList.contains("show")) {
@@ -158,21 +160,22 @@ function CheckAction(trg) {
 // ----------------------------------------------------------------------------
 
 // Меню портфолио
-let menuItems = document.querySelectorAll(".portfolio__menu>li");
-let portfItems = document.querySelectorAll(".portfolio__item");
-import { menuOperating } from "./menuOperating.js";
+let menuItems = qsa(".portfolio__menu>li");
+let portfItems = qsa(".portfolio__item");
 
 menuOperating(menuItems, portfItems, "black-text", "red-text", "item-hidden");
 
 // Отзывы
 
-let review = document.querySelectorAll(".review__content");
-let seeMore = document.querySelectorAll(".see-more__button");
+let review = qsa(".review__content");
+let seeMore = qsa(".see-more__button");
 let reviewHeights = [];
+
 seeMore.forEach((item, i) => {
   item.addEventListener("click", () => reviewOperating(i));
   reviewHeights[i] = review[i].offsetHeight;
 });
+
 function reviewOperating(n) {
   review[n].classList.toggle("full-size");
   review[n].parentNode.classList.toggle("full-size-wrapper");
@@ -184,7 +187,7 @@ function reviewOperating(n) {
 }
 
 // Плавный скролл
-let anchors = document.querySelectorAll(
+let anchors = qsa(
   ".main-menu a,.burger__menu a,.call-to-action__buttons a, .top-scroll"
 );
 
@@ -192,34 +195,34 @@ for (let anchor of anchors) {
   anchor.addEventListener("click", function (event) {
     button.checked = false;
     let anchorID = anchor.getAttribute("href");
-    let targetElement = document.querySelector("" + anchorID);
+    let targetElement = qs("" + anchorID);
     event.preventDefault();
     targetElement.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
   });
+}
 
-  let goTopBtn = document.querySelector(".top-scroll");
+let goTopBtn = qs(".top-scroll");
 
-  window.addEventListener("scroll", trackScroll);
+window.addEventListener("scroll", trackScroll);
 
-  function trackScroll() {
-    let scrolled = window.pageYOffset;
-    let coords = document.documentElement.clientHeight;
-    button.checked = false;
-    if (scrolled > coords) {
-      goTopBtn.classList.add("top-scroll_show");
-    }
-    if (scrolled < coords) {
-      goTopBtn.classList.remove("top-scroll_show");
-    }
+function trackScroll() {
+  let scrolled = window.pageYOffset;
+  let coords = document.documentElement.clientHeight;
+  button.checked = false;
+  if (scrolled > coords) {
+    goTopBtn.classList.add("top-scroll_show");
   }
+  if (scrolled < coords) {
+    goTopBtn.classList.remove("top-scroll_show");
+  }
+}
 
-  function backToTop() {
-    if (window.pageYOffset > 0) {
-      window.scrollBy(0, -80);
-      setTimeout(backToTop, 0);
-    }
+function backToTop() {
+  if (window.pageYOffset > 0) {
+    window.scrollBy(0, -80);
+    setTimeout(backToTop, 0);
   }
 }
