@@ -1,6 +1,3 @@
-
-
-
 function showSection(
   menuItems,
   item,
@@ -59,15 +56,11 @@ function showSection(
           getCountsSorted(additionalClasses)[showSectionIndex].arrayItem
         ) {
           item[i].classList.remove(classHidden);
-        
         }
       }
     }
   }
   showItems(showSectionIndex);
-  
-
-  
 }
 
 function menuOperating(

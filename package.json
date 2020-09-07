@@ -10,6 +10,7 @@
     "clean": "rimraf dist/*",
     "start": "parcel src/index.html",
     "build": "npm run clean && parcel build src/index.html",
+    "format": "prettier --write .",
     "serve": "serve dist"
   },
   "dependencies": {

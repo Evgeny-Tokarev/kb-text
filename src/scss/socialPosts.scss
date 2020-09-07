@@ -1,52 +1,52 @@
 @use "common" as *;
 .accordion__item {
-	width: 100%;
-	padding: 1rem;
-	border: 1px solid $black;
-	overflow: hidden;
-	margin-bottom: 2px;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid $black;
+  overflow: hidden;
+  margin-bottom: 2px;
 }
 .accordion__header {
-	position: relative;
+  position: relative;
 }
 .accordion__header h3 {
-	width: 85%;
+  width: 85%;
 }
 @media screen and (max-width: 600px) {
-	.accordion__header h3 {
-		width: 75%;
-	}
+  .accordion__header h3 {
+    width: 75%;
+  }
 }
 .accordion__content {
-	overflow: hidden;
-	transition: all 0.5s linear;
+  overflow: hidden;
+  transition: all 0.5s linear;
 }
 
 .accordion__header:before {
-	content: "";
-	position: absolute;
-	width: 15px;
-	height: 2px;
-	background-color: $black;
-	right: 30px;
-	top: 50%;
-	@include transform(translate(3px, -50%) rotate(45deg));
-	transition: 0.5s linear;
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  background-color: $black;
+  right: 30px;
+  top: 50%;
+  @include transform(translate(3px, -50%) rotate(45deg));
+  transition: 0.5s linear;
 }
 .accordion__header.show:before {
-	@include transform(translate(3px, -50%) rotate(-45deg));
+  @include transform(translate(3px, -50%) rotate(-45deg));
 }
 .accordion__header:after {
-	content: "";
-	position: absolute;
-	width: 15px;
-	height: 2px;
-	background-color: $black;
-	right: 15px;
-	top: 50%;
-	@include transform(translate(-2px, -50%) rotate(-45deg));
-	transition: 0.5s linear;
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  background-color: $black;
+  right: 15px;
+  top: 50%;
+  @include transform(translate(-2px, -50%) rotate(-45deg));
+  transition: 0.5s linear;
 }
 .accordion__header.show:after {
-	@include transform(translate(-2px, -50%) rotate(45deg));
+  @include transform(translate(-2px, -50%) rotate(45deg));
 }
