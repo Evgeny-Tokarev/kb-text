@@ -5,7 +5,7 @@ import "./lib/polyfills";
 import "regenerator-runtime/runtime";
 import "core-js/stable";
 import Swiper from "swiper/bundle";
-import { qs } from "./lib/utils";
+import { qs, qsa } from "./lib/utils";
 import { menuOperating } from "./menuOperating.js";
 
 // Инициализируем wowjs
