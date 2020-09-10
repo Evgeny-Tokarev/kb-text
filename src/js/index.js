@@ -1,5 +1,5 @@
-import "swiper/swiper-bundle.css";
-import "../index.css";
+// import "swiper/swiper-bundle.css";
+// import "../index.css";
 
 import "./lib/polyfills";
 import "regenerator-runtime/runtime";
