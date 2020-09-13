@@ -169,16 +169,12 @@ menuOperating(menuItems, portfItems, "black-text", "red-text", "item-hidden");
 
 let review = qsa(".review__content");
 let seeMore = qsa(".see-more__button");
-let reviewHeights = [];
-
 seeMore.forEach((item, i) => {
   item.addEventListener("click", () => reviewOperating(i));
-  reviewHeights[i] = review[i].offsetHeight;
 });
 
 function reviewOperating(n) {
   review[n].classList.toggle("full-size");
-  review[n].parentNode.classList.toggle("full-size-wrapper");
   if (review[n].classList.contains("full-size")) {
     review[n].nextElementSibling.innerHTML = "свернуть";
   } else {

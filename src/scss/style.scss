@@ -480,7 +480,9 @@
     opacity: 1;
   }
 }
-/* slider*/
+
+// _______________________________* slider*
+
 .reviews {
   text-align: center;
   padding: 0 0 4rem 0;
@@ -492,60 +494,21 @@
 }
 
 .swiper-slide {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-around;
   width: 37.5rem;
-  height: $short-review-height;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 1rem;
-  padding: 0 1rem;
+  padding: 1rem;
   overflow: hidden;
-  -webkit-animation: shortSize 0.4s linear forwards;
-  animation: shortSize 0.4s linear forwards;
-}
-.full-size-wrapper {
-  -webkit-animation: fullSize 0.4s linear forwards;
-  animation: fullSize 0.4s linear forwards;
-}
-@-webkit-keyframes fullSize {
-  0% {
-    height: $short-review-height;
-  }
-  100% {
-    height: $full-review-height;
-  }
-}
-@keyframes fullSize {
-  0% {
-    height: $short-review-height;
-  }
-  100% {
-    height: $full-review-height;
-  }
-}
-@-webkit-keyframes shortSize {
-  0% {
-    height: $full-review-height;
-  }
-  100% {
-    height: $short-review-height;
-  }
-}
-@keyframes shortSize {
-  0% {
-    height: $full-review-height;
-  }
-  100% {
-    height: $short-review-height;
-  }
 }
 
 .review__heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 .review__photo {
   flex-shrink: 0;
@@ -570,7 +533,7 @@
 }
 .review__content {
   overflow: hidden;
-  max-height: 200px;
+  max-height: 3rem;
   text-align: justify;
   padding: 1rem;
   transition: 0.4s linear;
@@ -587,7 +550,7 @@
   cursor: pointer;
 }
 .full-size {
-  max-height: 500px;
+  max-height: 50rem;
 }
 .review__features {
   display: flex;
@@ -630,7 +593,6 @@ audio {
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-between;
-        // font-size: 1.3rem;
         font-weight: 600;
       }
       hr {
@@ -849,9 +811,6 @@ footer {
     -webkit-box-flex: 1;
     flex: 1 0 33.33%;
   }
-  .slider-row {
-    height: 80vh;
-  }
 }
 
 @media screen and (max-width: 800px) {
@@ -998,18 +957,6 @@ footer {
     max-width: 100%;
   }
 
-  // .slider-row {
-  //   height: 50vh;
-  // }
-
-  .slider__item {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
-    max-width: 100%;
-    border: 0;
-  }
-
   .prices__inner {
     .prices__header {
       padding: 3rem 1rem;
@@ -1052,5 +999,10 @@ footer {
     span {
       font-size: 12rem;
     }
+  }
+}
+@media screen and (max-width: 500px) {
+  .swiper-slide {
+    width: 90%;
   }
 }
