@@ -8,7 +8,6 @@ import Swiper from "swiper/bundle";
 import { qs, qsa } from "./lib/utils";
 import { menuOperating } from "./menuOperating.js";
 
-// Инициализируем wowjs
 new WOW().init();
 
 var swiper = new Swiper(".swiper-container", {
@@ -162,7 +161,19 @@ function CheckAction(trg) {
 // Меню портфолио
 let menuItems = qsa(".portfolio__menu>li");
 let portfItems = qsa(".portfolio__item");
-
+console.log(portfItems);
+// portfItems.forEach((item, i) => {
+//   item.addEventListener("click", () =>
+//     menuOperating(
+//       menuItems,
+//       portfItems,
+//       "black-text",
+//       "red-text",
+//       "item-hidden",
+//       i
+//     )
+//   );
+// });
 menuOperating(menuItems, portfItems, "black-text", "red-text", "item-hidden");
 
 // Отзывы
@@ -182,7 +193,7 @@ function reviewOperating(n) {
   }
 }
 
-// Плавный скролл
+// Плавный скролл при нажатии на пункты меню
 let anchors = qsa(
   ".main-menu a,.burger__menu a,.call-to-action__buttons a, .top-scroll"
 );
@@ -219,6 +230,6 @@ function trackScroll() {
 function backToTop() {
   if (window.pageYOffset > 0) {
     window.scrollBy(0, -80);
-    setTimeout(backToTop, 0);
+    setTimeout(backToTop, 10);
   }
 }
