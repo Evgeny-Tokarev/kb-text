@@ -161,20 +161,14 @@ function CheckAction(trg) {
 // Меню портфолио
 let menuItems = qsa(".portfolio__menu>li");
 let portfItems = qsa(".portfolio__item");
-console.log(portfItems);
-// portfItems.forEach((item, i) => {
-//   item.addEventListener("click", () =>
-//     menuOperating(
-//       menuItems,
-//       portfItems,
-//       "black-text",
-//       "red-text",
-//       "item-hidden",
-//       i
-//     )
-//   );
-// });
-menuOperating(menuItems, portfItems, "black-text", "red-text", "item-hidden");
+menuOperating(
+  menuItems,
+  portfItems,
+  "black-text",
+  "red-text",
+  "item-hidden",
+  0
+);
 
 // Отзывы
 

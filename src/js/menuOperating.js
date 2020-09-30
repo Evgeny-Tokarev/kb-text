@@ -68,7 +68,8 @@ function menuOperating(
   sections,
   passiveClass,
   activeClass,
-  classHidden
+  classHidden,
+  n
 ) {
   menuItems.forEach((menuItem, i) => {
     menuItem.addEventListener("click", () =>
@@ -83,7 +84,7 @@ function menuOperating(
     );
   });
 
-  showSection(menuItems, sections, passiveClass, activeClass, classHidden, 0);
+  showSection(menuItems, sections, passiveClass, activeClass, classHidden, n);
 }
 
 export { menuOperating };

@@ -1,5 +1,6 @@
 import { menuOperating } from "./menuOperating";
 import { qsa } from "./lib/utils";
+let hash = location.hash.substring(1);
 
 qsa(".swiper-container").forEach((domElement) => {
   new Swiper(domElement, {
@@ -20,6 +21,13 @@ qsa(".swiper-container").forEach((domElement) => {
 let menuItems = qsa(".main-menu > li");
 let sections = qsa("section[data-section]");
 
-menuOperating(menuItems, sections, "white-bg", "black-bg", "section--hidden");
+menuOperating(
+  menuItems,
+  sections,
+  "white-bg",
+  "black-bg",
+  "section--hidden",
+  hash
+);
 
 export { sections as prototipItems };
