@@ -1,7 +1,13 @@
 import { menuOperating } from "./menuOperating";
-import { qsa } from "./lib/utils";
+import { qsa, qs } from "./lib/utils";
+import { goTop } from "./topScroll";
+import { trackScroll } from "./topScroll";
 let hash = location.hash.substring(1);
-
+if (!!hash) {
+  console.log(hash);
+} else {
+  hash = 0;
+}
 qsa(".swiper-container").forEach((domElement) => {
   new Swiper(domElement, {
     autoHeight: true, //enable auto height
@@ -29,5 +35,6 @@ menuOperating(
   "section--hidden",
   hash
 );
-
+goTop();
+window.addEventListener("scroll", trackScroll);
 export { sections as prototipItems };

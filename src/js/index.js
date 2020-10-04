@@ -7,6 +7,8 @@ import "core-js/stable";
 import Swiper from "swiper/bundle";
 import { qs, qsa } from "./lib/utils";
 import { menuOperating } from "./menuOperating.js";
+import { goTop } from "./topScroll";
+import { trackScroll } from "./topScroll";
 
 new WOW().init();
 
@@ -186,44 +188,5 @@ function reviewOperating(n) {
     review[n].nextElementSibling.innerHTML = "читать всё...";
   }
 }
-
-// Плавный скролл при нажатии на пункты меню
-let anchors = qsa(
-  ".main-menu a,.burger__menu a,.call-to-action__buttons a, .top-scroll"
-);
-
-for (let anchor of anchors) {
-  anchor.addEventListener("click", function (event) {
-    button.checked = false;
-    let anchorID = anchor.getAttribute("href");
-    let targetElement = qs("" + anchorID);
-    event.preventDefault();
-    targetElement.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  });
-}
-
-let goTopBtn = qs(".top-scroll");
-
+goTop(button);
 window.addEventListener("scroll", trackScroll);
-
-function trackScroll() {
-  let scrolled = window.pageYOffset;
-  let coords = document.documentElement.clientHeight;
-  button.checked = false;
-  if (scrolled > coords) {
-    goTopBtn.classList.add("top-scroll_show");
-  }
-  if (scrolled < coords) {
-    goTopBtn.classList.remove("top-scroll_show");
-  }
-}
-
-function backToTop() {
-  if (window.pageYOffset > 0) {
-    window.scrollBy(0, -80);
-    setTimeout(backToTop, 10);
-  }
-}

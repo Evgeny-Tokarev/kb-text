@@ -15,7 +15,6 @@ body {
     padding: 2rem 0;
   }
   &__item {
-    height: 100%;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -26,16 +25,17 @@ body {
     -ms-flex: 1 0 25%;
     flex: 1 0 25%;
     text-align: center;
-    padding: 0 1rem;
+    padding: 1rem;
   }
   &__nav {
     .main-menu {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      align-items: center;
+      align-items: stretch;
       justify-content: space-between;
       margin-bottom: 2rem;
+      height: 100%;
     }
   }
   &__item:last-child {
@@ -93,4 +93,15 @@ body {
 .swiper-container-horizontal > .swiper-pagination-bullets {
   bottom: auto;
   top: 0;
+}
+@media screen and (max-width: 600px) {
+  .portfolio-prototips__nav .main-menu {
+    flex-direction: column;
+    width: 100%;
+  }
+  .portfolio-prototips__item {
+    width: 100%;
+    border-right: 1px solid $black;
+    padding: 1rem 0;
+  }
 }
