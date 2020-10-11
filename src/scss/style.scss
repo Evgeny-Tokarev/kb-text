@@ -230,7 +230,9 @@
     }
   }
 }
-
+.outstanding-container {
+  padding: 3rem;
+}
 /* Services section*/
 .services {
   background: linear-gradient(
@@ -462,11 +464,6 @@
   }
   p {
     font-weight: 600;
-
-    // position: absolute;
-    // top: 0;
-    // left: 50%;
-    // transform: translate(-50%, 0);
   }
 }
 .SEO {
@@ -1039,5 +1036,11 @@ footer {
 @media screen and (max-width: 500px) {
   .swiper-slide {
     width: 90%;
+  }
+  .portfolio__item {
+    height: 19rem;
+  }
+  .SEO {
+    height: 25rem;
   }
 }
