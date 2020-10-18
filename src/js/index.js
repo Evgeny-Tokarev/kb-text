@@ -70,8 +70,8 @@ let accordion = qsa(".accordion__item");
 let heights = [];
 
 accordion.forEach((item, i) => {
-  heights[i] = item.children[1].offsetHeight;
-
+  heights[i] = item.children[1].offsetHeight + 30;
+  console.log(heights[i]);
   item.children[1].style.maxHeight = 0;
   item.children[0].addEventListener("click", () => accordionOperating(i));
 });

@@ -12,12 +12,16 @@
 .accordion__header h3 {
   width: 85%;
 }
+.accordion__content.show {
+  margin-bottom: 2rem;
+}
 @media screen and (max-width: 600px) {
   .accordion__header h3 {
     width: 75%;
   }
 }
 .accordion__content {
+  padding: 0 1rem 0 1rem;
   overflow: hidden;
   transition: all 0.5s linear;
 }
