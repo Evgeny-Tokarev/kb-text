@@ -1,5 +1,5 @@
 import "swiper/swiper-bundle.css";
-import "../index.css";
+import "../scss/index.css";
 
 import "./lib/polyfills";
 import "regenerator-runtime/runtime";
@@ -68,11 +68,11 @@ burger.addEventListener("touchcancel", function (e) {
 
 let accordion = qsa(".accordion__item");
 let heights = [];
-  accordion.forEach((item, i) => {
-    heights[i] = item.children[1].offsetHeight;
-    item.children[1].style.maxHeight = 0;
-    item.children[0].addEventListener("click", () => accordionOperating(i));
-  });
+accordion.forEach((item, i) => {
+  heights[i] = item.children[1].offsetHeight;
+  item.children[1].style.maxHeight = 0;
+  item.children[0].addEventListener("click", () => accordionOperating(i));
+});
 window.addEventListener("scroll", accordScroll);
 
 function accordScroll() {
@@ -87,14 +87,8 @@ function accordScroll() {
         window.pageYOffset + target.getBoundingClientRect().bottom <
           window.pageYOffset)
     ) {
-      console.log(target.getBoundingClientRect().bottom);
-    console.log( window.pageYOffset);
       accordionOperating(i);
     }
-     if (
-      target.classList.contains("show")) {
-       console.log(target.getBoundingClientRect().bottom);
-     }
   });
 }
 
