@@ -1,5 +1,5 @@
-import "swiper/swiper-bundle.css";
-import "../scss/index.css";
+// import "swiper/swiper-bundle.css";
+// import "../scss/index.css";
 
 import "./lib/polyfills";
 import "regenerator-runtime/runtime";
@@ -180,6 +180,7 @@ seeMore.forEach((item, i) => {
 
 function reviewOperating(n) {
   review[n].classList.toggle("full-size");
+  review[n].parentElement.classList.toggle("full-size-wrapper");
   if (review[n].classList.contains("full-size")) {
     review[n].nextElementSibling.innerHTML = "свернуть";
   } else {

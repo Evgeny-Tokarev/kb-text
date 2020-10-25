@@ -26,7 +26,7 @@
     height: 20rem;
   }
   100% {
-    height: 37.5rem;
+    height: 39rem;
   }
 }
 @keyframes fullSize {
@@ -34,12 +34,12 @@
     height: 20rem;
   }
   100% {
-    height: 37.5rem;
+    height: 39rem;
   }
 }
 @-webkit-keyframes shortSize {
   0% {
-    height: 37.5rem;
+    height: 39rem;
   }
   100% {
     height: 20rem;
@@ -47,7 +47,7 @@
 }
 @keyframes shortSize {
   0% {
-    height: 37.5rem;
+    height: 39rem;
   }
   100% {
     height: 20rem;
